@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:x_app/feature/onboarding/screen/onboarding_page.dart';
+import 'package:x_app/feature/sign_in/screen/sign_in_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,6 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: "/",
+      routes: {
+        "/": (context) => OnBoardingPage(),
+        "/sign_in": (context) => SignInPage()
+      },
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -22,9 +30,8 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.red,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -96,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             const Text(
-              'You have pushed the button this many times:',
+              'You have    this many times:',
             ),
             Text(
               '$_counter',
